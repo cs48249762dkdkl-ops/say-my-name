@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MY STRENGTH · 강점 결과</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            color: #171717;
+            background: #f7f7f5;
+
+            font-family:
+                Arial,
+                "Noto Sans KR",
+                sans-serif;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .header-inner {
+            width: min(1200px, calc(100% - 60px));
+
+            min-height: 90px;
+
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .logo {
+            color: #171717;
+
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        .back {
+            color: #171717;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            border-bottom: 1px solid #171717;
+            padding-bottom: 4px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            padding: 140px 0 100px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .hero-inner {
+            width: min(1200px, calc(100% - 60px));
+
+            margin: 0 auto;
+        }
+
+
+        .label {
+            margin-bottom: 25px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+
+        .hero h1 {
+            max-width: 850px;
+
+            margin: 0;
+
+            font-size: clamp(42px, 7vw, 82px);
+
+            line-height: 1.05;
+
+            letter-spacing: -3px;
+        }
+
+
+        .hero p {
+            max-width: 650px;
+
+            margin-top: 40px;
+
+            color: #666;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           RESULT
+        ========================= */
+
+        .result-section {
+            padding: 100px 0;
+        }
+
+
+        .result-container {
+            width: min(900px, calc(100% - 60px));
+
+            margin: 0 auto;
+        }
+
+
+        .result-card {
+            background: white;
+
+            border: 1px solid #ddd;
+
+            padding: 60px;
+        }
+
+
+        .result-card h2 {
+            margin: 0 0 15px;
+
+            font-size: 28px;
+        }
+
+
+        .description {
+            margin-bottom: 50px;
+
+            color: #666;
+        }
+
+
+        /* =========================
+           STRENGTH
+        ========================= */
+
+        .strength {
+            padding: 35px 0;
+
+            border-top: 1px solid #ddd;
+        }
+
+
+        .strength:last-child {
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        .strength-number {
+            margin-bottom: 10px;
+
+            color: #888;
+
+            font-size: 11px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .strength h3 {
+            margin: 0 0 15px;
+
+            font-size: 27px;
+        }
+
+
+        .strength p {
+            margin: 0;
+
+            color: #555;
+        }
+
+
+        .evidence {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            background: #f5f5f3;
+
+            border-left: 3px solid #171717;
+        }
+
+
+        .evidence-label {
+            margin-bottom: 7px;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           STORY
+        ========================= */
+
+        .story {
+            margin-top: 80px;
+
+            padding-top: 60px;
+
+            border-top: 1px solid #171717;
+        }
+
+
+        .story h2 {
+            margin: 0 0 25px;
+
+            font-size: 28px;
+        }
+
+
+        .story p {
+            color: #444;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #ddd;
+
+            padding: 50px 0;
+        }
+
+
+        .footer-inner {
+            width: min(1200px, calc(100% - 60px));
+
+            margin: 0 auto;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .footer-inner strong {
+            font-size: 14px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .footer-inner span {
+            color: #777;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .header-inner {
+                width: calc(100% - 35px);
+            }
+
+
+            .hero {
+                padding: 100px 0 70px;
+            }
+
+
+            .hero-inner {
+                width: calc(100% - 35px);
+            }
+
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+
+            .result-section {
+                padding: 60px 0;
+            }
+
+
+            .result-container {
+                width: calc(100% - 35px);
+            }
+
+
+            .result-card {
+                padding: 35px 22px;
+            }
+
+
+            .footer-inner {
+                width: calc(100% - 35px);
+
+                flex-direction: column;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="header-inner">
+
+            <a
+                class="logo"
+                href="index.html">
+
+                MY STRENGTH
+
+            </a>
+
+
+            <a
+                class="back"
+                href="index.html#works">
+
+                ← 돌아가기
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-inner">
+
+            <div class="label">
+                APPLICATION · 13
+            </div>
+
+
+            <h1>
+                나의 강점
+            </h1>
+
+
+            <p>
+                리추얼 기록을 바탕으로 이미 분석된
+                나의 강점 결과를 확인합니다.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RESULT -->
+
+    <main class="result-section">
+
+        <div class="result-container">
+
+            <div class="result-card">
+
+                <h2>
+                    강점 분석 결과
+                </h2>
+
+
+                <p class="description">
+                    지금까지의 기록에서 반복적으로 나타난
+                    나의 행동과 특징입니다.
+                </p>
+
+
+
+                <!-- 강점 01 -->
+
+                <article class="strength">
+
+                    <div class="strength-number">
+                        STRENGTH 01
+                    </div>
+
+
+                    <h3>
+                        긍정적인 태도
+                    </h3>
+
+
+                    <p>
+                        다양한 상황에서 긍정적인 마음가짐을 유지하고
+                        밝은 태도로 사람들과 관계를 형성하는 강점입니다.
+                    </p>
+
+
+                    <div class="evidence">
+
+                        <div class="evidence-label">
+                            EVIDENCE
+                        </div>
+
+                        긍정적인 마인드로 살아가며
+                        주변 사람들에게 밝게 인사하고
+                        긍정적으로 행동한 기록이 반복해서 나타났습니다.
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 강점 02 -->
+
+                <article class="strength">
+
+                    <div class="strength-number">
+                        STRENGTH 02
+                    </div>
+
+
+                    <h3>
+                        친절함과 배려
+                    </h3>
+
+
+                    <p>
+                        상대방의 행동이나 상황에 관계없이
+                        친절하게 대하고 도움을 주려는 태도가 나타납니다.
+                    </p>
+
+
+                    <div class="evidence">
+
+                        <div class="evidence-label">
+                            EVIDENCE
+                        </div>
+
+                        모르는 부분을 다른 사람에게 설명해주거나
+                        어려운 상황에서도 상대방과 차분하게
+                        대화하려고 노력한 기록이 있습니다.
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- 강점 03 -->
+
+                <article class="strength">
+
+                    <div class="strength-number">
+                        STRENGTH 03
+                    </div>
+
+
+                    <h3>
+                        감정 조절
+                    </h3>
+
+
+                    <p>
+                        감정적으로 반응하기보다 자신의 감정을 조절하고
+                        상황을 차분하게 바라보려는 강점입니다.
+                    </p>
+
+
+                    <div class="evidence">
+
+                        <div class="evidence-label">
+                            EVIDENCE
+                        </div>
+
+                        불편한 상황에서도 감정을 바로 표출하지 않고
+                        차분하게 대화를 진행하려고 노력한 기록이 있습니다.
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- STORY -->
+
+                <section class="story">
+
+                    <h2>
+                        나의 강점 이야기
+                    </h2>
+
+
+                    <p>
+                        나의 기록을 돌아보면 긍정적인 태도,
+                        다른 사람을 배려하는 친절함,
+                        그리고 자신의 감정을 조절하려는 모습이
+                        반복적으로 나타납니다.
+                    </p>
+
+
+                    <p>
+                        이러한 기록들은 내가 어떤 상황에서도
+                        나 자신을 돌아보고 더 나은 방향으로
+                        행동하려고 노력해왔다는 것을 보여줍니다.
+                    </p>
+
+                </section>
+
+</div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <strong>
+                MY STRENGTH
+            </strong>
+
+
+            <span>
+                FINAL PROJECT · BR-A · 2026
+            </span>
+
+        </div>
+
+    </footer>
+
+<!-- BACK -->
+
+<div class="research-back">
+
+    <a href="index.html#works">
+        ← MY WORK로 돌아가기
+    </a>
+
+<span style="display: inline-block; width: 666px;"></span>
+
+    <a href="index.html">
+        HOME
+    </a>
+
+</body>
+
+</html>
+
+
